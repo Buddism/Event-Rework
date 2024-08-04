@@ -308,7 +308,7 @@ function EventManager_ProcessMainStack(%currStack)
 	if($EventManager_MainStack[%currStack, COUNT] == 0)
 	{
 		deleteVariables("$EventManager_MainStack" @ %currStack @ "_*"); //delete all the related stack vars
-		talk("DELETED MAIN-STACK");
+		//talk("DELETED MAIN-STACK");
 
 		if(%currStack == $EventManager_MainStackCount - 1)
 			$EventManager_MainStackCount--;
@@ -337,8 +337,8 @@ function EventManager_Process()
 	}
 
 	bottomprintall(%callCount, 1, 1);
-	if(%callCount > %callQuota)
-		talk(%callCount);
+	//if(%callCount > %callQuota)
+		//talk(%callCount);
 	$EventManager_Schedule = schedule(1 + %callCount, 0, EventManager_Process);
 }
 
